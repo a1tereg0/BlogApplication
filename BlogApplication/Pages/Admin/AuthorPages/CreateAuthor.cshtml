@@ -1,0 +1,63 @@
+﻿@page
+@model BlogApplication.Pages.Admin.AuthorPages.CreateAuthorModel
+@{
+}
+
+<div>
+    <form method="post">
+        <fieldset>
+            <legend>Create Author</legend>
+            <div class="mb-3">
+                <label asp-for="Author.FirstName"></label>
+                <input class="form-control" asp-for="Author.FirstName" autocomplete="on" />
+                <span asp-validation-for="Author.FirstName"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Author.LastName"></label>
+                <input class="form-control" asp-for="Author.LastName" autocomplete="on" />
+                <span asp-validation-for="Author.LastName"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Author.Birthday"></label>
+                <input class="form-control" asp-for="Author.Birthday" autocomplete="on" />
+                <span asp-validation-for="Author.Birthday"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Author.EmailAddress"></label>
+                <input class="form-control" asp-for="Author.EmailAddress" autocomplete="on" />
+                <span asp-validation-for="Author.EmailAddress"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Author.WebAddress"></label>
+                <input class="form-control" asp-for="Author.WebAddress" autocomplete="on" />
+                <span asp-validation-for="Author.WebAddress"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Author.PhoneNumber"></label>
+                <input class="form-control" asp-for="Author.PhoneNumber" autocomplete="on" />
+                <span asp-validation-for="Author.PhoneNumber"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Author.Country"></label>
+                <input class="form-control" asp-for="Author.Country" autocomplete="on" />
+                <span asp-validation-for="Author.Country"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Author.Province"></label>
+                <input class="form-control" asp-for="Author.Province" autocomplete="on" />
+                <span asp-validation-for="Author.Province"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Author.PostalCode"></label>
+                <input class="form-control" asp-for="Author.PostalCode" autocomplete="on" />
+                <span asp-validation-for="Author.PostalCode"></span>
+            </div>
+            <button class="btn btn-outline-primary">Submit</button>
+        </fieldset>
+    </form>
+    <div asp-validation-summary="All" />
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,38 @@
+﻿@page
+@model BlogApplication.Pages.Admin.BlogPages.CreateBlogModel
+@{
+}
+
+<div>
+    <form method="post">
+        <fieldset>
+            <legend>Create a blog</legend>
+            <div class="mb-3">
+                <label asp-for="Blog.Title"></label>
+                <input class="form-control" asp-for="Blog.Title" />
+                <span asp-validation-for="Blog.Title"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Blog.Body"></label>
+                <textarea class="form-control" asp-for="Blog.Body"></textarea>
+                <span asp-validation-for="Blog.Body"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Blog.Author"></label>
+                <select class="form-control" asp-for="Blog.Author" asp-items="Model.AuthorList"></select>
+                <span asp-validation-for="Blog.Author"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Blog.PublishDate"></label>
+                <input class="form-control" asp-for="Blog.PublishDate" />
+                <span asp-validation-for="Blog.PublishDate"></span>
+            </div>
+            <button class="btn btn-outline-primary">Submit</button>
+        </fieldset>
+    </form>
+    <div asp-validation-summary="All" />
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
