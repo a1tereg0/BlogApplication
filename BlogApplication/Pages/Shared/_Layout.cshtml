@@ -6,6 +6,9 @@
     <title>@ViewData["Title"] - BlogApplication</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+
+    <!-- Auto Discovery URL -->
+    <link rel="manifest" href="~/manifest.json" />
 </head>
 <body>
     <header>
@@ -52,5 +55,6 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)
+    <script src="~/sw-register.js"></script>
 </body>
 </html>
