@@ -1,0 +1,11 @@
+{
+  "name": "Blog Application",
+  "short_name": "Blog",
+  "description": "This is a simple blogging application. ",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "orientation": "natural",
+  "lang": "English",
+  "screenshots": [],
+  "icons": []
+}
