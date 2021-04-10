@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,6 +9,10 @@ namespace BlogApplication.Models
 {
     public class Author
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int AuthorID { get; set; }
+
         [Display(Name ="First Name")]
         [StringLength(20,ErrorMessage = "Your first name cannot exceed 20 characters")]
         [Required]
@@ -44,6 +49,8 @@ namespace BlogApplication.Models
         [Display(Name = "Postal/Zip Code")]
         [DataType(DataType.PostalCode)]
         public string PostalCode { get; set; }
+
+        public ICollection<Blog> blogs;
 
     }
 }
